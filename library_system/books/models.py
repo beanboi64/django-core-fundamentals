@@ -30,6 +30,6 @@ class BookInstance(models.Model):
     }
 
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    imprint = models.CharField(Author, on_delete=models.CASCADE)
+    imprint = models.CharField(max_length=255)
     due_back = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=3, choices=STATUS_CHOICES, default=RETURNED)
